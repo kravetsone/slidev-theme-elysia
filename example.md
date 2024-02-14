@@ -1,9 +1,9 @@
 ---
 theme: ./
-layout: cover
+layout: "cover"
 ---
 
-# Bun, ElysiaJS или почему Express плохой выбор
+# Slidev Theme Starter
 
 Presentation slides for developers
 
@@ -68,8 +68,6 @@ function updateUser(id: number, update: Partial<User>) {
 ```
 
 ---
-
-## layout: "layout"
 
 layout: center
 class: "text-center"

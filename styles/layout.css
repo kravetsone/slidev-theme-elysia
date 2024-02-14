@@ -52,16 +52,20 @@
     );
 }
 
+.text-elysia-purple {
+    @apply text-xl leading-relaxed font-semibold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400;
+}
+
 .slidev-layout.cover,
 .slidev-layout.intro {
     background-color: var(--vp-c-bg) !important;
-    @apply h-full grid;
+    @apply h-full;
 
     h1 {
-        @apply relative text-5xl md:text-6xl md:leading-tight font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-indigo-400 mt-2 mb-6;
+        @apply relative text-4xl md:text-5xl md:leading-tight font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-indigo-400 mt-2 mb-6;
     }
 
-    h1 + p {
+    /* h1 + p {
         @apply -mt-2 opacity-50 mb-4;
     }
 
@@ -69,5 +73,5 @@
     ul + h2,
     table + h2 {
         @apply mt-10;
-    }
+    } */
 }
