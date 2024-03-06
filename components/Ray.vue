@@ -1,4 +1,5 @@
 <!-- https://codepen.io/TWilson/pen/jOdWqbZ -->
+
 <template>
     <div class="absolute flex flex-col w-full !max-w-full items-center justify-center bg-transparent transition-bg overflow-hidden"
         :class="className">
@@ -86,10 +87,11 @@ import { onMounted, ref } from 'vue'
 
 const props = defineProps<{
     class?: string
+    animate?: boolean
     static?: boolean
 }>()
 
-const animated = ref(false)
+const animated = ref(props.animate)
 const isStatic = ref(props.static)
 
 const className = ref(props.class || 'h-screen')
@@ -102,8 +104,8 @@ const isSafari = ref(
 )
 
 onMounted(() => {
-    if (navigator?.hardwareConcurrency > 4)
-        animated.value = true
+    // if (navigator?.hardwareConcurrency > 4)
+    //     animated.value = true
 
     isSafari.value =
         navigator.userAgent.indexOf('Safari') !== -1 &&
