@@ -1,7 +1,6 @@
 :root {
-    /* default theme color */
-    /* can be overrided by uses `themeConfig` option */
     --slidev-theme-primary: #5d8392;
+    --slidev-code-background: #1e293b !important;
 }
 
 .link {
@@ -57,7 +56,8 @@
 }
 
 .slidev-layout.cover,
-.slidev-layout.intro {
+.slidev-layout.intro,
+.slidev-layout.default {
     background-color: var(--vp-c-bg) !important;
     @apply h-full;
 
