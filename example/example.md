@@ -1,6 +1,6 @@
 ---
 theme: ./
-layout: "cover"
+layout: cover
 ---
 
 # Slidev Theme Starter
