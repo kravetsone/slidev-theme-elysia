@@ -2,6 +2,8 @@
 
 The [Slidev](https://sli.dev/) theme in [ElysiaJS](https://elysiajs.com/) documentation style.
 
+[Demo](https://kravetsone.github.io/slidev-theme-elysia/). [Screenshots](#screenshots). [Ray Component](#use-a-ray-component).
+
 ## Install
 
 Add the following frontmatter to your `slides.md`. Start Slidev then it will prompt you to install the theme automatically.
@@ -41,4 +43,19 @@ Now each slide render a Ray component!
 ##### With
 
 ![with Ray component](./example-export/003.png)
+
+## Screenshots
+
+Screenshots with the [Ray Component](#use-a-ray-component).
+
+![screenshot](./example-export/001.png)
+
+![screenshot](./example-export/002.png)
+
+![screenshot](./example-export/004.png)
+
+![screenshot](./example-export/005.png)
+
+![screenshot](./example-export/006.png)
+
 
