@@ -6,7 +6,7 @@ The [Slidev](https://sli.dev/) theme in [ElysiaJS](https://elysiajs.com/) docume
 
 ## Install
 
-Add the following frontmatter to your `slides.md`. Start Slidev then it will prompt you to install the theme automatically.
+Add the following frontmatter to your `slides.md`.
 
 ```yaml
 ---
@@ -14,7 +14,7 @@ theme: elysia
 ---
 ```
 
-or install via your's favorite package manager
+Start [Slidev](https://sli.dev/) and then it will prompt you to install the theme automatically or install via your's favorite package manager
 
 ```bash
 npm install slidev-theme-elysia
@@ -24,9 +24,9 @@ Learn more about [how to use a theme](https://sli.dev/themes/use).
 
 ### Use a Ray component
 
-Ray component is a background of [ElysiaJS](https://elysiajs.com/) documentation.
+Ray component is a background light of [ElysiaJS](https://elysiajs.com/) documentation.
 
-Create `global-top.vue` component and paste it
+Create `global-top.vue` file (More about [global layers](https://sli.dev/custom/global-layers)) and paste it
 
 ```html
 <template>
@@ -50,7 +50,7 @@ Screenshots with the [Ray Component](#use-a-ray-component).
 
 ![screenshot](./example-export/001.png)
 
-![screenshot](./example-export/002.png)
+![screenshot](./example-export/003.png)
 
 ![screenshot](./example-export/004.png)
 
@@ -58,4 +58,83 @@ Screenshots with the [Ray Component](#use-a-ray-component).
 
 ![screenshot](./example-export/006.png)
 
+## Styles
 
+#### `.text-elysia-indigo-purple`
+
+```html
+<p class="text-elysia-indigo-purple"> ElysiaJS </p>
+```
+
+![screenshot](./example-export/007.png)
+
+#### `.text-elysia-lime-cyan`
+
+```html
+<p class="text-elysia-lime-cyan"> Made for Humans </p>
+```
+
+![screenshot](./example-export/008.png)
+
+
+### Code blocks + [Twoslash](https://twoslash.netlify.app/)
+
+````md
+```typescript twoslash
+// @errors: 2322 1003
+// @filename: server.ts
+import { Elysia, t } from 'elysia'
+
+const app = new Elysia()
+    .patch(
+        '/user/profile',
+        ({ body, error }) => {
+            if(body.age < 18) 
+                return error(400, "Oh no")
+
+            if(body.name === 'Nagisa')
+                return error(418)
+
+            return body
+        },
+        {
+            body: t.Object({
+                name: t.String(),
+                age: t.Number()
+            })
+        }
+    )
+    .listen(80)
+
+export type App = typeof app
+
+// @filename: client.ts
+// ---cut---
+// client.ts
+import { treaty } from '@elysiajs/eden'
+import type { App } from './server'
+
+const api = treaty<App>('localhost')
+
+const { data, error } = await api.user.profile.patch({
+    name: 'saltyaom',
+    age: '21'
+})
+
+if(error)
+    switch(error.status) {
+        case 400:
+            throw error.value
+//                         ^?
+
+        case 418:
+            throw error.value
+//                         ^?
+}
+
+data
+// ^?
+```
+````
+
+![screenshot](./example-export/009.png)

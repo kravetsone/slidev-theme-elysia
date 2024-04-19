@@ -22,7 +22,9 @@
         "@slidev/types": "0.48.3"
     },
     "devDependencies": {
+        "@elysiajs/eden": "^1.0.11",
         "@slidev/cli": "0.48.3",
+        "elysia": "^1.0.13",
         "playwright-chromium": "^1.43.1"
     },
     "//": "Learn more: https://sli.dev/themes/write-a-theme.html",

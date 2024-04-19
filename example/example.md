@@ -5,7 +5,7 @@ layout: cover
 
 # Slidev Theme Starter
 
-Presentation slides for developers
+Presentation slides for developers in <span class="text-elysia-purple">ElysiaJS</span> documentation style
 
 ---
 
@@ -92,3 +92,77 @@ class: "text-center"
 # Learn More
 
 [Documentations](https://sli.dev) / [GitHub Repo](https://github.com/slidevjs/slidev)
+
+---
+layout: center
+class: "text-center"
+zoom: 5
+---
+
+<p class="text-elysia-indigo-purple"> ElysiaJS </p>
+
+---
+layout: center
+class: "text-center"
+zoom: 3
+---
+
+<p class="text-elysia-lime-cyan"> Made for Humans </p>
+
+---
+
+```typescript twoslash
+// @errors: 2322 1003
+// @filename: server.ts
+import { Elysia, t } from 'elysia'
+
+const app = new Elysia()
+    .patch(
+        '/user/profile',
+        ({ body, error }) => {
+            if(body.age < 18) 
+                return error(400, "Oh no")
+
+            if(body.name === 'Nagisa')
+                return error(418)
+
+            return body
+        },
+        {
+            body: t.Object({
+                name: t.String(),
+                age: t.Number()
+            })
+        }
+    )
+    .listen(80)
+
+export type App = typeof app
+
+// @filename: client.ts
+// ---cut---
+// client.ts
+import { treaty } from '@elysiajs/eden'
+import type { App } from './server'
+
+const api = treaty<App>('localhost')
+
+const { data, error } = await api.user.profile.patch({
+    name: 'saltyaom',
+    age: '21'
+})
+
+if(error)
+    switch(error.status) {
+        case 400:
+            throw error.value
+//                         ^?
+
+        case 418:
+            throw error.value
+//                         ^?
+}
+
+data
+// ^?
+```
