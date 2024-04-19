@@ -2,7 +2,11 @@
 
 The [Slidev](https://sli.dev/) theme in [ElysiaJS](https://elysiajs.com/) documentation style.
 
-[Demo](https://kravetsone.github.io/slidev-theme-elysia/). [Screenshots](#screenshots). [Ray Component](#use-a-ray-component).
+- [Demo](https://kravetsone.github.io/slidev-theme-elysia/)
+- [Screenshots](#screenshots)
+- [Ray Component](#use-a-ray-component)
+- [Styles](#styles)
+- [Code blocks + Twoslash](#code-blocks--twoslash)
 
 ## Install
 
@@ -57,25 +61,6 @@ Screenshots with the [Ray Component](#use-a-ray-component).
 ![screenshot](./example-export/005.png)
 
 ![screenshot](./example-export/006.png)
-
-## Styles
-
-#### `.text-elysia-indigo-purple`
-
-```html
-<p class="text-elysia-indigo-purple"> ElysiaJS </p>
-```
-
-![screenshot](./example-export/007.png)
-
-#### `.text-elysia-lime-cyan`
-
-```html
-<p class="text-elysia-lime-cyan"> Made for Humans </p>
-```
-
-![screenshot](./example-export/008.png)
-
 
 ### Code blocks + [Twoslash](https://twoslash.netlify.app/)
 
@@ -137,4 +122,30 @@ data
 ```
 ````
 
+![screenshot](./example-export/007.png)
+
+### Styles
+
+#### `.text-elysia-sky-indigo`
+
+```html
+<p class="text-elysia-sky-indigo"> Ergonomic Framework for Humans </p>
+```
+
+![screenshot](./example-export/008.png)
+
+#### `.text-elysia-indigo-purple`
+
+```html
+<p class="text-elysia-indigo-purple"> ElysiaJS </p>
+```
+
 ![screenshot](./example-export/009.png)
+
+#### `.text-elysia-lime-cyan`
+
+```html
+<p class="text-elysia-lime-cyan"> Made for Humans </p>
+```
+
+![screenshot](./example-export/010.png)

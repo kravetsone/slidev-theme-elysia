@@ -94,22 +94,6 @@ class: "text-center"
 [Documentations](https://sli.dev) / [GitHub Repo](https://github.com/slidevjs/slidev)
 
 ---
-layout: center
-class: "text-center"
-zoom: 5
----
-
-<p class="text-elysia-indigo-purple"> ElysiaJS </p>
-
----
-layout: center
-class: "text-center"
-zoom: 3
----
-
-<p class="text-elysia-lime-cyan"> Made for Humans </p>
-
----
 
 ```typescript twoslash
 // @errors: 2322 1003
@@ -166,3 +150,26 @@ if(error)
 data
 // ^?
 ```
+
+---
+layout: center
+class: "text-center"
+---
+
+<p class="text-elysia-sky-indigo"> Ergonomic Framework for Humans </p>
+
+---
+layout: center
+class: "text-center"
+zoom: 5
+---
+
+<p class="text-elysia-indigo-purple"> ElysiaJS </p>
+
+---
+layout: center
+class: "text-center"
+zoom: 3
+---
+
+<p class="text-elysia-lime-cyan"> Made for Humans </p>
