@@ -1,6 +1,6 @@
 {
     "name": "slidev-theme-elysia",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Elysia theme for slidev",
     "type": "module",
     "keywords": [
@@ -37,5 +37,10 @@
                 "mono": "Consolas"
             }
         }
-    }
+    },
+    "files": [
+        "components",
+        "setup",
+        "styles"
+    ]
 }

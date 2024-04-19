@@ -2,11 +2,11 @@
 
 The [Slidev](https://sli.dev/) theme in [ElysiaJS](https://elysiajs.com/) documentation style.
 
-- [Demo](https://kravetsone.github.io/slidev-theme-elysia/)
-- [Screenshots](#screenshots)
-- [Ray Component](#use-a-ray-component)
-- [Styles](#styles)
-- [Code blocks + Twoslash](#code-blocks--twoslash)
+-   [Demo](https://kravetsone.github.io/slidev-theme-elysia/)
+-   [Screenshots](#screenshots)
+-   [Ray Component](#use-a-ray-component)
+-   [Styles](#styles)
+-   [Code blocks + Twoslash](#code-blocks--twoslash)
 
 ## Install
 
@@ -18,7 +18,7 @@ theme: elysia
 ---
 ```
 
-Start [Slidev](https://sli.dev/) and then it will prompt you to install the theme automatically or install via your's favorite package manager
+Start [Slidev](https://sli.dev/) and then it will prompt you to install the theme automatically or install via your's favorite package manager.
 
 ```bash
 npm install slidev-theme-elysia
@@ -30,11 +30,14 @@ Learn more about [how to use a theme](https://sli.dev/themes/use).
 
 Ray component is a background light of [ElysiaJS](https://elysiajs.com/) documentation.
 
-Create `global-top.vue` file (More about [global layers](https://sli.dev/custom/global-layers)) and paste it
+Create `global-top.vue` file (More about [global layers](https://sli.dev/custom/global-layers)) and paste it.
 
 ```html
 <template>
-    <Ray class="h-[150px] top-0 left-0 z-[100] opacity-25 dark:opacity-[.55] pointer-events-none" static />
+    <Ray
+        class="h-[150px] top-0 left-0 z-[100] opacity-25 dark:opacity-[.55] pointer-events-none"
+        static
+    />
 </template>
 ```
 
@@ -68,56 +71,54 @@ Screenshots with the [Ray Component](#use-a-ray-component).
 ```typescript twoslash
 // @errors: 2322 1003
 // @filename: server.ts
-import { Elysia, t } from 'elysia'
+import { Elysia, t } from "elysia";
 
 const app = new Elysia()
     .patch(
-        '/user/profile',
+        "/user/profile",
         ({ body, error }) => {
-            if(body.age < 18) 
-                return error(400, "Oh no")
+            if (body.age < 18) return error(400, "Oh no");
 
-            if(body.name === 'Nagisa')
-                return error(418)
+            if (body.name === "Nagisa") return error(418);
 
-            return body
+            return body;
         },
         {
             body: t.Object({
                 name: t.String(),
-                age: t.Number()
-            })
+                age: t.Number(),
+            }),
         }
     )
-    .listen(80)
+    .listen(80);
 
-export type App = typeof app
+export type App = typeof app;
 
 // @filename: client.ts
 // ---cut---
 // client.ts
-import { treaty } from '@elysiajs/eden'
-import type { App } from './server'
+import { treaty } from "@elysiajs/eden";
+import type { App } from "./server";
 
-const api = treaty<App>('localhost')
+const api = treaty<App>("localhost");
 
 const { data, error } = await api.user.profile.patch({
-    name: 'saltyaom',
-    age: '21'
-})
+    name: "saltyaom",
+    age: "21",
+});
 
-if(error)
-    switch(error.status) {
+if (error)
+    switch (error.status) {
         case 400:
-            throw error.value
-//                         ^?
+            throw error.value;
+        //                         ^?
 
         case 418:
-            throw error.value
-//                         ^?
-}
+            throw error.value;
+        //                         ^?
+    }
 
-data
+data;
 // ^?
 ```
 ````
@@ -129,7 +130,7 @@ data
 #### `.text-elysia-sky-indigo`
 
 ```html
-<p class="text-elysia-sky-indigo"> Ergonomic Framework for Humans </p>
+<p class="text-elysia-sky-indigo">Ergonomic Framework for Humans</p>
 ```
 
 ![screenshot](./example-export/008.png)
@@ -137,7 +138,7 @@ data
 #### `.text-elysia-indigo-purple`
 
 ```html
-<p class="text-elysia-indigo-purple"> ElysiaJS </p>
+<p class="text-elysia-indigo-purple">ElysiaJS</p>
 ```
 
 ![screenshot](./example-export/009.png)
@@ -145,7 +146,7 @@ data
 #### `.text-elysia-lime-cyan`
 
 ```html
-<p class="text-elysia-lime-cyan"> Made for Humans </p>
+<p class="text-elysia-lime-cyan">Made for Humans</p>
 ```
 
 ![screenshot](./example-export/010.png)
